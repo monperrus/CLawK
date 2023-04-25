@@ -112,8 +112,9 @@ contract Casino {
 
         pot = pot - amount;
         msg.sender.transfer(amount);
-    }
+    } 
 
+    // commit;
     // Operator opens a bet
     function createGame(bytes32 _hashedNumber)
         public
@@ -143,6 +144,7 @@ contract Casino {
         wager = Wager({bet: msg.value, guess: _guess, timestamp: now});
     }
 
+    // Reveal
     // Operator resolves a bet
     function decideBet(uint256 secretNumber)
         public
